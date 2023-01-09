@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361231350073",
+    "project_id": "shared-account-book-ee87d",
+    "storage_bucket": "shared-account-book-ee87d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361231350073:android:ed6cbcd1f29e51a67dd0e8",
+        "android_client_info": {
+          "package_name": "com.choi.shared_account_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361231350073-57r11h4q3ntjjslohggif95poaga26vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA34FODlBia9jvxsURQTdOf4abE6FdXV2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361231350073-57r11h4q3ntjjslohggif95poaga26vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

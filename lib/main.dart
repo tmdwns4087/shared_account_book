@@ -6,11 +6,16 @@ import 'package:shared_account_book/View/more.dart';
 import 'package:shared_account_book/View/statistics.dart';
 import 'package:shared_account_book/View/wallet.dart';
 import 'package:shared_account_book/bottom_navi_provider.dart';
-import 'package:shared_account_book/calender_model.dart';
 import 'package:shared_account_book/config.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp( MyApp());
   initializeDateFormatting();
 }
@@ -57,7 +62,6 @@ class Home extends StatelessWidget {
 
   }
   Widget bottomNavigation(){
-
     return Theme(
       data: ThemeData(
         splashColor: Colors.transparent,
