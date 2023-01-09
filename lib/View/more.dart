@@ -8,6 +8,7 @@ class More extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Text('김선재 병신'),
         FloatingActionButton(onPressed: (){
           FirebaseFirestore.instance
               .collection('member')
