@@ -29,6 +29,13 @@
             {
               "client_id": "361231350073-57r11h4q3ntjjslohggif95poaga26vf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "361231350073-52tqpf1t64ph1retpjfmush1h5rue1af.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.choi.sharedAccountBook"
+              }
             }
           ]
         }
