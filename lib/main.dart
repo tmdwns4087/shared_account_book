@@ -31,10 +31,10 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (BuildContext context) => BottomNavigationProvider())
         ],
         child: MaterialApp(
-          theme: ThemeData(
-              fontFamily: "normal"
-          ),
-          home: Home()
+            theme: ThemeData(
+                fontFamily: "normal"
+            ),
+            home: Home()
         )
     );
   }
@@ -47,8 +47,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     bottomNavigationProvider = Provider.of<BottomNavigationProvider>(context);
     return Scaffold(
-      body: content(),
-      bottomNavigationBar : bottomNavigation()
+        body: content(),
+        bottomNavigationBar : bottomNavigation()
     );
   }
   Widget content(){

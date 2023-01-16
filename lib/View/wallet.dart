@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:shared_account_book/View/write_account.dart';
 import 'package:shared_account_book/config.dart';
 
 class Wallet extends StatelessWidget {
@@ -90,14 +91,22 @@ class Wallet extends StatelessWidget {
             ),
           ),
           Center(
-            child: Container(
-              width: 110,
-              height: 50,
-              decoration: BoxDecoration(
-                color: primaryColor,
-                borderRadius: BorderRadius.circular(10)
+            child: GestureDetector(
+              onTap:(){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=> const WriteAccount()),
+                );
+              },
+              child: Container(
+                width: 110,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Center(child: Text('가계부 입력',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)),
               ),
-              child: Center(child: Text('가계부 입력',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)),
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height/12,)
