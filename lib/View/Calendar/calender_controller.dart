@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CalendarModel extends ChangeNotifier{
+class CalendarController extends ChangeNotifier{
   DateTime focusedDay = DateTime.now();
   DateTime selectedDay = DateTime.now();
 
@@ -11,5 +11,13 @@ class CalendarModel extends ChangeNotifier{
     selectedDay = select;
     notifyListeners();
     print(selectedDay);
+  }
+  void changePage(date){
+    focusedDay = DateTime(date.year,date.month,1);
+    // selectedDay = DateTime(date.year,date.month,1);
+    notifyListeners();
+  }
+  void selectDate(date){
+
   }
 }

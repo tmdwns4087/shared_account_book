@@ -1,27 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_account_book/View/calendar.dart';
-import 'package:shared_account_book/View/more.dart';
-import 'package:shared_account_book/View/statistics.dart';
-import 'package:shared_account_book/View/wallet.dart';
-import 'package:shared_account_book/bottom_navi_provider.dart';
 import 'package:shared_account_book/config.dart';
-import 'package:firebase_core/firebase_core.dart';
-import '../firebase_options.dart';
-
-
-
-
 class WriteAccount extends StatelessWidget {
   const WriteAccount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = getWidth(context);
+    double height = getHeight(context);
 
     return DefaultTabController(
       length: 4,
