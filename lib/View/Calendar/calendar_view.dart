@@ -44,8 +44,8 @@ class Calendar extends StatelessWidget {
                 '${_calendarController.focusedDay.year} / ${_calendarController.focusedDay.month}',
                 style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22.sp),
               ),
-              SizedBox(width: 8.w,),
-              const Icon(Icons.arrow_forward_ios_rounded,color: Colors.grey,size: 16,)
+              // SizedBox(width: 8.w,),
+              // const Icon(Icons.arrow_forward_ios_rounded,color: Colors.grey,size: 16,)
             ],
           ),
         ),

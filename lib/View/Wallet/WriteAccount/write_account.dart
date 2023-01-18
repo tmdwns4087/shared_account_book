@@ -11,15 +11,13 @@ class WriteAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     _writeAccountController = Provider.of<WriteAccountController>(context);
     double height = getHeight(context);
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Row(
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+            children: [
+              SafeArea(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text('가계부 입력',
@@ -29,104 +27,107 @@ class WriteAccount extends StatelessWidget {
                         )
                     ),
                     IconButton(onPressed: (){
-                       Navigator.pop(context);
-                      },
+                      Navigator.pop(context);
+                    },
                       icon: Icon(Icons.close),
                       iconSize:30,
                       color: Colors.grey.shade700,
                     )
                   ],
                 ),
-                const SizedBox(height: 10,),
-                Row(
-                  children: List.generate(4, (index) => TabItem(index: index, name: _writeAccountController.tabItemName[index])),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top:17),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
+              ),
+              const SizedBox(height: 10,),
+              Row(
+                children: List.generate(4, (index) => TabItem(index: index, name: _writeAccountController.tabItemName[index])),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:17),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
 
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFFFFFFF),
-                            side: const BorderSide(
-                                color: Color(0xffA0A0A0),
-                                width: 1.5
-                            ),
-                            minimumSize: const Size(160, 45),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 0.0
-                        ),
-                        child: const Text('개인',
-                            style:TextStyle(
-                                color: Color(0xffA0A0A0),
-                                fontSize: 17,
-                                fontWeight: FontWeight.w800
-                            )
-                        ),
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFFFFFF),
+                          side: const BorderSide(
+                              color: Color(0xffA0A0A0),
+                              width: 1.5
+                          ),
+                          minimumSize: const Size(160, 45),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          elevation: 0.0
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff7354B2),
-                            side: const BorderSide(
-                                color: Color(0xff7354B2),
-                                width: 1.5
-                            ),
-                            minimumSize: const Size(160, 45),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            elevation: 0.0
-                        ),
-                        child: const Text('공동',
-                          style: TextStyle(
+                      child: const Text('개인',
+                          style:TextStyle(
+                              color: Color(0xffA0A0A0),
                               fontSize: 17,
                               fontWeight: FontWeight.w800
-                          ),),
+                          )
                       ),
-                    ],
-                  ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff7354B2),
+                          side: const BorderSide(
+                              color: Color(0xff7354B2),
+                              width: 1.5
+                          ),
+                          minimumSize: const Size(160, 45),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          elevation: 0.0
+                      ),
+                      child: const Text('공동',
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800
+                        ),),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 15,),
-                Expanded(
-                  child:SingleChildScrollView(
-                    child: (_writeAccountController.tab == 0) ? Spend() :
+              ),
+              const SizedBox(height: 15,),
+              Expanded(
+                child:ListView(
+                  children:[
+                    (_writeAccountController.tab == 0) ? Spend() :
                     (_writeAccountController.tab == 1) ? FixedSpend() :
                     (_writeAccountController.tab == 2) ? Income() : Budget(),
-                  )
+                    SizedBox(height: 150,),
+                    Center(
+                      child: GestureDetector(
+                        onTap:(){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder:(context)=> WriteAccount()),
+                          );
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 45,
+                          decoration: BoxDecoration(
+                              color: primaryColor,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Center(child: Text('가계부 입력',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)),
+                        ),
+                      ),
+                    ),
+                  ]
 
                 ),
-                Center(
-                  child: GestureDetector(
-                    onTap:(){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder:(context)=> WriteAccount()),
-                      );
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 45,
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Center(child: Text('가계부 입력',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16),)),
-                    ),
-                  ),
-                ),
-                SizedBox(height: height*0.04,)
-              ]
-            ),
-          ),
+              ),
+
+              // SizedBox(height: height*0.04,)
+            ]
         ),
       ),
     );
