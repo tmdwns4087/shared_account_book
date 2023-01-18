@@ -6,6 +6,7 @@ import 'package:shared_account_book/View/Calendar/calender_controller.dart';
 import 'package:shared_account_book/View/Home/home.dart';
 import 'package:shared_account_book/View/Home/bottom_navi_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_account_book/View/Wallet/WriteAccount/write_account_controller.dart';
 import 'package:shared_account_book/View/Wallet/wallet_controller.dart';
 import 'firebase_options.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (BuildContext context) => BottomNavigationProvider()),
           ChangeNotifierProvider(create: (BuildContext context) => WalletController()),
           ChangeNotifierProvider(create: (BuildContext context) => CalendarController()),
+          ChangeNotifierProvider(create: (BuildContext context) => WriteAccountController()),
         ],
         child: ScreenUtilInit(
           designSize: const Size(360,690),

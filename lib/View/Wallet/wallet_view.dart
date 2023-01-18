@@ -4,7 +4,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_account_book/View/Wallet/wallet_controller.dart';
 import 'package:shared_account_book/View/Wallet/wallet_model.dart';
-import 'package:shared_account_book/View/Wallet/write_account.dart';
+import 'package:shared_account_book/View/Wallet/WriteAccount/write_account.dart';
 import 'package:shared_account_book/config.dart';
 import 'package:intl/intl.dart';
 class Wallet extends StatelessWidget {
@@ -64,7 +64,7 @@ class Wallet extends StatelessWidget {
                 onTap:(){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder:(context)=> const WriteAccount()),
+                    MaterialPageRoute(builder:(context)=> WriteAccount()),
                   );
                 },
                 child: Container(
