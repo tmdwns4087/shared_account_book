@@ -101,7 +101,12 @@ class WriteAccount extends StatelessWidget {
                     (_writeAccountController.tab == 0) ? Spend() :
                     (_writeAccountController.tab == 1) ? FixedSpend() :
                     (_writeAccountController.tab == 2) ? Income() : Budget(),
-                    SizedBox(height: 150,),
+                    SizedBox(
+                      height:
+                      (_writeAccountController.tab == 0) ? 70.h :
+                      (_writeAccountController.tab == 1) ? 35.h :
+                      (_writeAccountController.tab == 2) ? 70.h : 140.h
+                    ),
                     Center(
                       child: GestureDetector(
                         onTap:(){
